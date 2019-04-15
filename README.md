@@ -25,6 +25,11 @@ To import existing npy files, use the lines
 backgroundVideo = np.load("../readVideo/backgroundName.npy") 
 projectionVideo = np.load('../readVideo/projectionName.npy') 
 ```
+## Download pre-processed npy files
+Background video: https://drive.google.com/open?id=1XidFY2vSv6kGsomkj6r-bDS-c-P0SB7v \
+try.mp4: https://drive.google.com/open?id=1XcybRS1RlogC0WcybCvrgoy7SLv_hLEK \
+try3.mp4: https://drive.google.com/open?id=1Jl1SdAXIdKR2F9ujZE0qsYbaOzQZvR5F \
+
 ## Code structure
 * Repo root
   * python
@@ -39,3 +44,7 @@ projectionVideo = np.load('../readVideo/projectionName.npy')
     * rest of the trump videos: projection videos of different frame size and frame rate (I was experimenting with what is the correct frame size and frame rate to use to avoid glitching effect. Still need to figure out)
   * results
     * Output augmented videos
+  * readVideo (create this folder and put the downloaded pre-processed npy files in it)
+     * trump_try_video.npy (https://drive.google.com/open?id=1XcybRS1RlogC0WcybCvrgoy7SLv_hLEK)
+     * background_video.npy (https://drive.google.com/open?id=1XidFY2vSv6kGsomkj6r-bDS-c-P0SB7v)
+     * trump_try3_video.npy (https://drive.google.com/open?id=1Jl1SdAXIdKR2F9ujZE0qsYbaOzQZvR5F)
