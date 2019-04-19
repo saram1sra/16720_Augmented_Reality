@@ -6,7 +6,7 @@ Charmander\
 Squirtle\
 Bulbasaur
 
-Pikachu (not used in implementation) 
+Pikachu (not used in AR implementation) 
 
 
 ## Required Libraries 
