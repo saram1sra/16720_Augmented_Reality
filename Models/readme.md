@@ -4,7 +4,7 @@
 ### Pokemon Models
 Charmander\
 Squirtle\
-Bulbasaur\
+Bulbasaur
 
 Pikachu (not used in implementation) 
 
@@ -25,7 +25,7 @@ E.g.
 main.py  - reads in the .obj file and renders in pygame\
 objloader.py - parses and loads the .obj file \
 *.mlt - contains the path and placement of the textures \
-*.obj - conatins the blank 3D model\
+*.obj - conatins the blank 3D model
 
 ### Folders
 \Textures - contains the textures for the 3D model 
