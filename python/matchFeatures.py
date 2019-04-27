@@ -29,28 +29,23 @@ def matchFeatures(im1, im2):
     # Convert the images to grayscale if they are RGBs
     im1Shape = im1.shape
     im2Shape = im2.shape
-    im1Gray = None
-    im2Gray = None
-    numMatches = 1000
-    if len(im1Shape) == 3:
-        im1Gray = color.rgb2gray(im1)
-    else:
-        im1Gray = im1
-
-    if len(im2Shape) == 3:
-        im2Gray = color.rgb2gray(im2)
-    else:
-        im2Gray = im2
+    numMatches = 100   # Change this parameter if encountering index out of range!
 
     # Detect features in both images
-    fastFeatureDetector = cv2.FastFeatureDetector_create() # Fast feature here with maximum suppression
-    keypoints1 = fastFeatureDetector.detect(im1,None)
-    keypoints2 = fastFeatureDetector.detect(im2,None)
+    # fastFeatureDetector = cv2.FastFeatureDetector_create() # Fast feature here with maximum suppression
+    # keypoints1 = fastFeatureDetector.detect(im1,None)
+    # keypoints2 = fastFeatureDetector.detect(im2,None)
+    orbFeatureDetector = cv2.ORB_create()  # ORB feature here with maximum suppression
+    keypoints1 = orbFeatureDetector.detect(im1,None)
+    keypoints2 = orbFeatureDetector.detect(im2,None)
 
     # Extract descriptors
-    briefExtractor = cv2.xfeatures2d.BriefDescriptorExtractor_create() # BRIEF descriptor
-    keypoints1, descriptor1 = briefExtractor.compute(im1, keypoints1)
-    keypoints2, descriptor2 = briefExtractor.compute(im2, keypoints2)
+    #briefExtractor = cv2.xfeatures2d.BriefDescriptorExtractor_create() # BRIEF descriptor
+    #keypoints1, descriptor1 = briefExtractor.compute(im1, keypoints1)
+    #keypoints2, descriptor2 = briefExtractor.compute(im2, keypoints2)
+
+    keypoints1, descriptor1 = orbFeatureDetector.compute(im1, keypoints1)
+    keypoints2, descriptor2 = orbFeatureDetector.compute(im2, keypoints2)
 
     # Match features using the descriptors
     bfMatcher = cv2.BFMatcher(cv2.NORM_HAMMING, crossCheck=True)
