@@ -2,6 +2,11 @@
 
 Projecting 3D model onto real-world environment with the correct context
 
+## Team Members: 
+[Sara Misra](https://github.com/saramsra)\ 
+[Olivia Xu](https://github.com/olimengia)\ 
+[Naman Gupta](https://github.com/OwlCoder)
+
 ## Tested on:
 
 Python 3.6\
